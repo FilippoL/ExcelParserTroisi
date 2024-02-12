@@ -385,7 +385,11 @@ async def process_xlsx(update: Update, context):
 
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
-TOKEN = '6764122261:AAHKthObiRifWgXybNW9ndgP8UmyKxGw6SE'
+with open('TOKEN', 'r') as file:
+    token = file.readline()
+    token.strip()
+
+TOKEN = token
 
 async def show_start_message(update: Update, _) -> None:
     help_message = '''Ciao! Inviami i file excel che desideri analizzare e io porterò avanti l'analisi.
